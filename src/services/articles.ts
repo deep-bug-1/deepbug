@@ -247,11 +247,11 @@ export class ArticleService {
   }
 
   // Toggle article like
-  static async toggleLike(articleId: string, increment: boolean): Promise<void> {
+  static async toggleLike(articleId: string, shouldIncrement: boolean): Promise<void> {
     try {
       const articleRef = doc(db, 'articles', articleId);
       await updateDoc(articleRef, {
-        likes: increment ? increment(1) : increment(-1)
+        likes: increment(shouldIncrement ? 1 : -1)
       });
     } catch (error) {
       console.error('Error toggling like:', error);
