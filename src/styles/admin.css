@@ -1,0 +1,575 @@
+/* Admin Panel Styles */
+.admin-panel {
+    min-height: 100vh;
+    background: var(--background-color);
+    padding: 2rem;
+}
+
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.admin-title {
+    color: var(--text-primary);
+    font-size: 2rem;
+    margin: 0;
+}
+
+.admin-user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.admin-badge {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.admin-logout {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.admin-logout:hover {
+    background: #dc2626;
+}
+
+/* Admin Navigation */
+.admin-nav {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.admin-nav-btn {
+    background: var(--surface-color);
+    color: var(--text-secondary);
+    border: 2px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.admin-nav-btn:hover,
+.admin-nav-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Admin Sections */
+.admin-section {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.admin-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Article Management */
+.article-form {
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: var(--border-radius-large);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.article-form h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+.rich-editor {
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--background-color);
+    min-height: 300px;
+}
+
+.rich-editor:focus-within {
+    border-color: var(--primary-color);
+}
+
+.image-input-group {
+    display: flex;
+    gap: 0.5rem;
+    align-items: end;
+}
+
+.image-input-group input {
+    flex: 1;
+}
+
+.add-image-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.external-images-list {
+    margin-top: 0.5rem;
+}
+
+.image-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--background-color);
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    margin-bottom: 0.5rem;
+}
+
+.image-url {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    flex: 1;
+    margin-right: 0.5rem;
+    word-break: break-all;
+}
+
+.remove-image-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.75rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.btn-success {
+    background: #10b981;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #059669;
+}
+
+.btn-secondary {
+    background: var(--text-muted);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: var(--text-secondary);
+}
+
+/* Articles List */
+.articles-management {
+    background: var(--surface-color);
+    border-radius: var(--border-radius-large);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.management-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.management-header h3 {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.articles-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.articles-table th,
+.articles-table td {
+    padding: 1rem;
+    text-align: right;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.articles-table th {
+    background: var(--background-color);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.articles-table td {
+    color: var(--text-secondary);
+}
+
+.article-title-cell {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-published {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.status-draft {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+.article-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    padding: 0.25rem 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.edit-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.edit-btn:hover {
+    background: var(--secondary-color);
+}
+
+.delete-btn {
+    background: #ef4444;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+}
+
+/* Chat Management */
+.chat-management {
+    background: var(--surface-color);
+    border-radius: var(--border-radius-large);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+}
+
+.chat-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.chat-control-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.open-chat-btn {
+    background: #10b981;
+    color: white;
+}
+
+.open-chat-btn:hover {
+    background: #059669;
+}
+
+.close-chat-btn {
+    background: #ef4444;
+    color: white;
+}
+
+.close-chat-btn:hover {
+    background: #dc2626;
+}
+
+.clear-chat-btn {
+    background: #f59e0b;
+    color: white;
+}
+
+.clear-chat-btn:hover {
+    background: #d97706;
+}
+
+.banned-users-section {
+    margin-top: 2rem;
+}
+
+.banned-users-list {
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.banned-user-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.banned-user-item:last-child {
+    border-bottom: none;
+}
+
+.banned-user-info {
+    flex: 1;
+}
+
+.banned-user-name {
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.banned-user-reason {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.unban-btn {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.unban-btn:hover {
+    background: #059669;
+}
+
+/* Statistics Cards */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-large);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Project Form */
+.project-form {
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: var(--border-radius-large);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.tech-tags-input {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.tech-tag-input {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tech-tag-input input {
+    width: 120px;
+}
+
+.add-tech-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.tech-tag-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 245, 255, 0.1);
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+}
+
+.remove-tech-btn {
+    background: none;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive Admin Styles */
+@media (max-width: 768px) {
+    .admin-panel {
+        padding: 1rem;
+    }
+    
+    .admin-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .admin-nav {
+        justify-content: center;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .articles-table {
+        font-size: 0.875rem;
+    }
+    
+    .articles-table th,
+    .articles-table td {
+        padding: 0.5rem;
+    }
+    
+    .article-title-cell {
+        max-width: 150px;
+    }
+    
+    .chat-controls {
+        justify-content: center;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-nav-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    .article-form,
+    .project-form {
+        padding: 1rem;
+    }
+    
+    .articles-table th,
+    .articles-table td {
+        padding: 0.25rem;
+        font-size: 0.75rem;
+    }
+    
+    .chat-control-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+}
